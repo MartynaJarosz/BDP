@@ -1,3 +1,12 @@
+--Zadanie 4
+SELECT COUNT(popp) FROM popp, majrivers
+WHERE ST_Distance(popp.geom, majrivers.geom)<1000 AND popp.f_codedesc='Building';
+
+SELECT popp.* INTO tableB FROM popp, majrivers
+WHERE ST_Distance(popp.geom, majrivers.geom)<1000 AND popp.f_codedesc='Building';
+
+SELECT * FROM popp;
+
 --Zadanie 5
 CREATE TABLE airportsNew AS
 (SELECT name, geom, elev FROM airports)
