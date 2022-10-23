@@ -27,7 +27,7 @@ INSERT INTO airportsnew(name, geom, elev) VALUES
 ('airportB',
 	(SELECT ST_Centroid(ST_Makeline (
 			(SELECT geom FROM airportsNew WHERE name LIKE 'ANNETTE ISLAND'), 
-			(SELECT geom FROM airportsNew WHERE name LIKE 'ATKA')))),210
+			(SELECT geom FROM airportsNew WHERE name LIKE 'ATKA')))), 200
 );
 --Zadanie 6
 SELECT ST_Area(ST_Buffer(ST_ShortestLine(lakes.geom,airportsNew.geom),1000)) 
