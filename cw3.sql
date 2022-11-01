@@ -10,8 +10,8 @@ WHERE ST_AsText(t2019_kar_buildings.geom) != ST_AsText(t2018_kar_buildings.geom)
 	
 --Zadanie 2
 SELECT COUNT(DISTINCT(t2019_kar_poi_table)) AS x FROM  t2019_kar_poi_table WHERE t2019_kar_poi_table.gid NOT IN (
-		SELECT DISTINCT(t2019_kar_poi_table.gid) FROM	t2019_kar_poi_table, t2018_kar_poi_table
-		WHERE ST_Equals(t2019_kar_poi_table.geom, (t2018_kar_poi_table.geom)) AND ST_DWithin(t2019_kar_poi_table.geom, x.geom, 500);
+SELECT DISTINCT(t2019_kar_poi_table.gid) FROM	t2019_kar_poi_table, t2018_kar_poi_table
+WHERE ST_Equals(t2019_kar_poi_table.geom, (t2018_kar_poi_table.geom)) AND ST_DWithin(t2019_kar_poi_table.geom, x.geom, 500);
 --?	
 
 
